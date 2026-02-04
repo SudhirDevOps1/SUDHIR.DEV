@@ -1,0 +1,309 @@
+/* ========================================
+   ENHANCED MOBILE & VISUAL EFFECTS
+   ======================================== */
+
+/* === DRAMATIC CARD HOVER EFFECTS === */
+
+/* Card Hover - Strong Glow & Lift */
+.card:hover {
+    transform: translateY(-8px) scale(1.01) !important;
+    border-color: rgba(var(--accent-rgb), 0.6) !important;
+    box-shadow:
+        0 30px 80px -15px rgba(var(--accent-rgb), 0.5),
+        0 0 80px rgba(var(--accent-rgb), 0.4),
+        inset 0 0 100px rgba(var(--accent-rgb), 0.1) !important;
+    animation: cardPulse 2.5s ease-in-out infinite;
+}
+
+/* Pulsing Glow Animation */
+@keyframes cardPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 30px 80px -15px rgba(var(--accent-rgb), 0.5),
+            0 0 80px rgba(var(--accent-rgb), 0.4),
+            inset 0 0 100px rgba(var(--accent-rgb), 0.1);
+    }
+
+    50% {
+        box-shadow:
+            0 35px 90px -15px rgba(var(--accent-rgb), 0.6),
+            0 0 100px rgba(var(--accent-rgb), 0.5),
+            inset 0 0 120px rgba(var(--accent-rgb), 0.15);
+    }
+}
+
+/* Stronger Spotlight Glow Effect */
+.card-glow {
+    background: radial-gradient(600px circle at var(--x) var(--y),
+            rgba(var(--accent-rgb), 0.3) 0%,
+            rgba(var(--accent-rgb), 0.15) 30%,
+            transparent 60%) !important;
+}
+
+.card:hover .card-glow {
+    opacity: 1 !important;
+    background: radial-gradient(600px circle at var(--x) var(--y),
+            rgba(var(--accent-rgb), 0.35) 0%,
+            rgba(var(--accent-rgb), 0.2) 30%,
+            transparent 65%) !important;
+}
+
+/* Card Image Enhancement on Hover */
+.card:hover .card-image img,
+.card:hover img {
+    opacity: 1 !important;
+    filter: brightness(1.15) contrast(1.1) saturate(1.1) !important;
+    transform: scale(1.08) !important;
+}
+
+/* Status Badge Glow */
+.card:hover .status-tag {
+    filter: drop-shadow(0 0 12px rgba(var(--accent-rgb), 1));
+    text-shadow: 0 0 8px rgba(var(--accent-rgb), 0.8);
+}
+
+.card:hover .dot {
+    box-shadow:
+        0 0 15px rgba(var(--accent-rgb), 1),
+        0 0 30px rgba(var(--accent-rgb), 0.6) !important;
+    transform: scale(1.2);
+}
+
+/* Category Badge Enhanced Glow */
+.card:hover .category-badge {
+    background: rgba(var(--accent-rgb), 0.3) !important;
+    color: #ffffff !important;
+    box-shadow:
+        0 0 25px rgba(var(--accent-rgb), 0.6),
+        inset 0 0 25px rgba(var(--accent-rgb), 0.3);
+    transform: scale(1.05);
+}
+
+/* Tech Tags Glow on Card Hover */
+.card:hover .tech-tag {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(var(--accent-rgb), 0.4) !important;
+    color: #fff !important;
+    box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.3);
+}
+
+/* Console Dramatic Glow */
+.card:hover .console {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border-color: rgba(var(--accent-rgb), 0.4) !important;
+    box-shadow:
+        0 0 40px rgba(var(--accent-rgb), 0.3),
+        inset 0 0 40px rgba(var(--accent-rgb), 0.08);
+}
+
+.card:hover .console .line span {
+    text-shadow: 0 0 8px rgba(var(--accent-rgb), 0.8);
+}
+
+/* Button Enhanced Glow on Card Hover */
+.card:hover .btn-p {
+    box-shadow:
+        0 15px 40px -8px rgba(var(--accent-rgb), 0.8),
+        0 0 35px rgba(var(--accent-rgb), 0.6) !important;
+    transform: translateY(-2px) scale(1.02);
+}
+
+.card:hover .btn-s {
+    border-color: rgba(var(--accent-rgb), 0.5) !important;
+    background: rgba(var(--accent-rgb), 0.05) !important;
+    box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.2);
+}
+
+/* Card Title Glow */
+.card:hover h3 {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* === ORBS ENHANCEMENT === */
+.orb-1,
+.orb-2,
+.orb-3 {
+    opacity: 0.4 !important;
+    filter: blur(120px) !important;
+}
+
+/* === MOBILE TOUCH IMPROVEMENTS === */
+@media (max-width: 768px) {
+    .btn {
+        padding: 14px 12px !important;
+        min-height: 44px !important;
+        font-size: 0.75rem !important;
+    }
+
+    .filter-tab {
+        padding: 12px 18px !important;
+        min-height: 44px !important;
+    }
+
+    .social-icons a {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    /* Reduced glow on mobile for performance */
+    .card:hover {
+        box-shadow:
+            0 20px 60px -15px rgba(var(--accent-rgb), 0.4),
+            0 0 50px rgba(var(--accent-rgb), 0.3) !important;
+        animation: none;
+    }
+}
+
+/* === TOUCH FEEDBACK - ACTIVE/PRESSED STATES === */
+.card:active {
+    transform: scale(0.97) !important;
+    opacity: 0.9;
+    transition: all 0.1s ease;
+}
+
+.btn:active {
+    transform: scale(0.95) !important;
+    transition: all 0.1s ease;
+}
+
+.filter-tab:active {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: scale(0.95);
+    transition: all 0.1s ease;
+}
+
+/* === BETTER LINK HOVER STATES === */
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-1);
+}
+
+/* === FOCUS INDICATORS FOR ACCESSIBILITY === */
+a:focus,
+button:focus,
+input:focus,
+.btn:focus,
+.filter-tab:focus {
+    outline: 3px solid var(--accent-1) !important;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* === SMOOTH TRANSITIONS === */
+.card,
+.btn,
+.filter-tab,
+a,
+button {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card * {
+    transition: all 0.3s ease;
+}
+
+/* === ENHANCED BUTTON EFFECTS === */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.btn:hover::before {
+    transform: translateX(100%);
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.btn:hover::after {
+    opacity: 1;
+}
+
+/* === FILTER TAB ENHANCED FEEDBACK === */
+.filter-tab {
+    transition: all 0.2s ease !important;
+    position: relative;
+}
+
+.filter-tab:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 0 20px rgba(var(--accent-1), 0.2);
+}
+
+/* Active Filter Tab - Glowing Effect */
+.filter-tab.active {
+    background: rgba(0, 255, 204, 0.15) !important;
+    color: #00ffcc !important;
+    border-color: rgba(0, 255, 204, 0.4) !important;
+    box-shadow:
+        0 0 30px rgba(0, 255, 204, 0.3),
+        inset 0 0 20px rgba(0, 255, 204, 0.1);
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+/* === SEARCH BAR ENHANCED === */
+#search:focus {
+    border-color: var(--accent-1) !important;
+    box-shadow:
+        0 0 50px rgba(0, 255, 204, 0.2),
+        inset 0 0 30px rgba(0, 255, 204, 0.05) !important;
+}
+
+/* === SCROLLBAR STYLING === */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent-1), var(--accent-2));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--accent-2), var(--accent-3));
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+}
+
+/* === DISABLE 3D TILT ON TOUCH DEVICES === */
+@media (hover: none) and (pointer: coarse) {
+    .card {
+        transform: none !important;
+    }
+
+    .card:hover {
+        transform: none !important;
+    }
+
+    /* Simpler effects on touch */
+    .card:active {
+        opacity: 0.95;
+        border-color: rgba(var(--accent-rgb), 0.4) !important;
+    }
+}
